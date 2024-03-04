@@ -1,0 +1,66 @@
+.main {
+  width: 100%;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  padding: 1rem;
+  object-fit: contain;
+}
+.div {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  top: 42%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--White);
+}
+.div .content {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.div span {
+  color: var(--Coolgray);
+  font-size: 14px;
+}
+.div .text {
+  width: 100px;
+  text-align: left;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  color: black;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: var(--White);
+}
+.active {
+  width: 30px;
+  height: 30px;
+  background-color: var(--Lightblue);
+  border-radius: 50%;
+  color: var(--Marine-blue);
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
