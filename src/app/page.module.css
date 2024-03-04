@@ -13,6 +13,28 @@
   align-items: center;
 }
 .section2 {
+  padding: 3rem;
   width: 70%;
-  background-color: aqua;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 91% 9%;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+.buttons button {
+  padding: .3rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttons .next{
+   background-color: var(--Marine-blue);
+   color: var(--White);
+   
 }
