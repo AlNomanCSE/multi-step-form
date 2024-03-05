@@ -6,7 +6,7 @@ type Props = {};
 type CardType = {
   src: string;
   title: string;
-  pricing: string;
+  pricing: number;
 };
 function Card({ src, title, pricing }: CardType) {
   return (
@@ -17,7 +17,7 @@ function Card({ src, title, pricing }: CardType) {
       <div className={styles.text}>
         <h1>{title}</h1>
         <br />
-        <span>{pricing}</span>
+        <span>${pricing}/mo</span>
       </div>
     </div>
   );
@@ -27,19 +27,22 @@ const SelectPlan = (props: Props) => {
     {
       src: "/images/icon-arcade.svg",
       title: "Arcade",
-      pricing: "$9/mo",
+      pricing: 9,
     },
     {
       src: "/images/icon-advanced.svg",
       title: "Advanced",
-      pricing: "$12/mo",
+      pricing: 12,
     },
     {
       src: "/images/icon-pro.svg",
       title: "Pro",
-      pricing: "$15/mo",
+      pricing: 15,
     },
   ];
+  function handleMonthOrYear(event: React.ChangeEvent<HTMLInputElement>) {
+    const isChecked = event.target.checked;
+  }
   return (
     <section className={styles.main}>
       <div className={styles.headings}>
@@ -59,7 +62,10 @@ const SelectPlan = (props: Props) => {
         </div>
         <div className={styles.billingTime}>
           <span>Monthly</span>
-
+          <label className={styles.switch}>
+            <input type="checkbox" onChange={handleMonthOrYear} />
+            <span className={styles.slider}></span>
+          </label>
           <span>Yearly</span>
         </div>
       </div>
