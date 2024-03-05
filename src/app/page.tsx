@@ -9,7 +9,6 @@ import { useState } from "react";
 
 export default function Home() {
   const [step, setStep] = useState<number>(1);
-  console.log(step);
 
   function stepIncrease() {
     if (step < 4) {

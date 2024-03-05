@@ -59,7 +59,7 @@ const SelectPlan = (props: Props) => {
         </div>
         <div className={styles.billingTime}>
           <span>Monthly</span>
-          
+
           <span>Yearly</span>
         </div>
       </div>
