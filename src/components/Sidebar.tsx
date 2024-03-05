@@ -24,9 +24,9 @@ function ProgressStep({ step, title, activeStep }: ProgressType) {
   );
 }
 type Props = {
-  active: number;
+  activeStep: number;
 };
-const Sidebar = ({ active }: Props) => {
+const Sidebar = ({ activeStep }: Props) => {
   const ProgressArry: { step: number; title: string }[] = [
     { step: 1, title: "Your info" },
     { step: 2, title: " Select plan" },
@@ -48,7 +48,7 @@ const Sidebar = ({ active }: Props) => {
             step={object.step}
             title={object.title}
             key={index}
-            activeStep={active}
+            activeStep={activeStep}
           />
         ))}
       </section>

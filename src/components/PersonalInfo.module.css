@@ -26,8 +26,8 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.input label{
-    color: var(--Marine-blue);
+.input label {
+  color: var(--Marine-blue);
 }
 .input input {
   padding: 0.5rem 1rem;
@@ -35,4 +35,10 @@
   border-radius: 7px;
   font-weight: 600;
   font-size: 12px;
+  outline: none;
+  color: var(--Marine-blue);
+}
+.input input:focus,
+.input input:active {
+  background-color: var(--Lightgray);
 }

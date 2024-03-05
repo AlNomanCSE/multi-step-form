@@ -1,7 +1,6 @@
 import { title } from "process";
 import styles from "./PersonalInfo.module.css";
 
-type Props = {};
 type contextProp = {
   title: string;
   type: string;
@@ -17,7 +16,7 @@ function Context({ title, type, name, id, placeholder }: contextProp) {
     </div>
   );
 }
-const PersonalInfo = (props: Props) => {
+const PersonalInfo = () => {
   const types = [
     {
       title: "Name",

@@ -1,0 +1,49 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.headings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.headings h1 {
+  font-size: 1.5rem;
+  color: var(--Marine-blue);
+}
+.headings p {
+  color: var(--Coolgray);
+}
+.addOneCards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.addOneCard {
+  height: 25%;
+  border: 1px solid var(--Purplishblue);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+}
+.addOneCard h1 {
+  font-size: 1rem;
+  color: var(--Marine-blue);
+}
+.addOneCard p {
+  color: var(--Coolgray);
+  font-size: 13px;
+}
+.addOneCard h5 {
+  color: var(--Purplishblue);
+  font-weight: 500;
+}
+.addOneCard div:nth-child(2) {
+  width: 200px;
+}

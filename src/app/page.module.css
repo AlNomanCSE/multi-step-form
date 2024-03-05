@@ -25,16 +25,15 @@
   justify-content: space-between;
   padding: 0 5rem;
 }
+
 .buttons button {
-  padding: .3rem 1rem;
+  padding: 0.3rem 1rem;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-
-.buttons .next{
-   background-color: var(--Marine-blue);
-   color: var(--White);
-   
+.buttons button:last-child {
+  background-color: var(--Marine-blue);
+  color: var(--White);
 }

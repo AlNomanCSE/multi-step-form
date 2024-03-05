@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.headings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.headings h1 {
+  font-size: 1.5rem;
+  color: var(--Marine-blue);
+}
+.headings p {
+  color: var(--Coolgray);
+}
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.billingTime {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--Coolgray);
+  font-weight: 600;
+}
+.card {
+  width: 30%;
+  height: 140px;
+  border: 1px solid var(--Coolgray);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+  gap: 2rem;
+}
+.card .text {
+  display: flex;
+  gap: 0rem;
+  flex-direction: column;
+}
+.text h1 {
+  font-size: 1rem;
+  color: var(--Marine-blue);
+}
+.text span {
+  color: var(--Coolgray);
+  font-size: 12px;
+}
+.card:hover {
+  border: 1px solid var(--Purplishblue);
+}
