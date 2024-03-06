@@ -21,6 +21,16 @@ export default function Home() {
     time: "mo",
   });
   const [addOnes, setAddons] = useState<CardType[]>([]);
+  const [fromData, setFromData] = useState<{
+    name: string;
+    email: string;
+    phone: string;
+  }>({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
   function updateAddOnes(newAddons: Array<CardType>) {
     setAddons([...newAddons]);
   }
@@ -49,7 +59,13 @@ export default function Home() {
         <Sidebar activeStep={step} />
       </section>
       <section className={styles.section2}>
-        {step == 1 && <PersonalInfo stepIncrease={stepIncrease} />}
+        {step == 1 && (
+          <PersonalInfo
+            stepIncrease={stepIncrease}
+            fromData={fromData}
+            setFromData={setFromData}
+          />
+        )}
         {step == 2 && (
           <SelectPlan
             updateCard={updateCard}
