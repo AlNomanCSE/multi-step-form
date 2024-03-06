@@ -7,11 +7,27 @@ type Cardtype = {
   pricing: number;
   time: string;
 };
-function Card({ title, discription, pricing, time }: Cardtype) {
+function Card({
+  title,
+  discription,
+  pricing,
+  time,
+  handleCheckboxChange,
+}: Cardtype & {
+  handleCheckboxChange: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    title: string,
+    pricing: number,
+    time: string
+  ) => void;
+}) {
   return (
-    <div className={styles.addOneCard} onClick={(e) => console.log(pricing)}>
+    <div className={styles.addOneCard}>
       <div>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onChange={(e) => handleCheckboxChange(e, title, pricing, time)}
+        />
       </div>
       <div>
         <h1> {title}</h1>
@@ -73,9 +89,35 @@ type CardType = {
 };
 type AddOnesProps = {
   planDetails: CardType;
+  updateAddOnes: (newAddons: CardType[]) => void;
+  stepIncrease: () => void;
+  stepDecrease: () => void;
 };
 
-const AddOnes = ({ planDetails }: AddOnesProps) => {
+const AddOnes = ({
+  planDetails,
+  updateAddOnes,
+  stepIncrease,
+  stepDecrease,
+}: AddOnesProps) => {
+  const [totalPricing, setTotalPeicing] = useState<number>(0);
+  const [addOnes, setAddons] = useState<CardType[]>([]);
+  function handleCheckboxChange(
+    event: React.ChangeEvent<HTMLInputElement>,
+    title: string,
+    pricing: number,
+    time: string
+  ) {
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      setTotalPeicing((pre) => pre + pricing);
+      setAddons([...addOnes, ...[{ title, pricing, time }]]);
+    } else {
+      setTotalPeicing((pre) => pre - pricing);
+      setAddons(() => addOnes.filter((addone) => addone.title !== title));
+    }
+  }
+
   return (
     <section className={styles.main}>
       <div className={styles.headings}>
@@ -90,6 +132,7 @@ const AddOnes = ({ planDetails }: AddOnesProps) => {
                 discription={object.discription}
                 pricing={object.pricing}
                 time={object.time}
+                handleCheckboxChange={handleCheckboxChange}
                 key={index}
               />
             ))
@@ -99,10 +142,22 @@ const AddOnes = ({ planDetails }: AddOnesProps) => {
                 discription={object.discription}
                 pricing={object.pricing}
                 time={object.time}
+                handleCheckboxChange={handleCheckboxChange}
                 key={index}
               />
             ))}
       </div>
+      <section className={styles.buttons}>
+        <button onClick={stepDecrease}>Go Back</button>
+        <button
+          onClick={() => {
+            stepIncrease();
+            updateAddOnes(addOnes);
+          }}
+        >
+          Next Step
+        </button>
+      </section>
     </section>
   );
 };

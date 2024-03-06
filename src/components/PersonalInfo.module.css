@@ -42,3 +42,18 @@
 .input input:active {
   background-color: var(--Lightgray);
 }
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons button {
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--Marine-blue);
+  color: var(--White);
+}

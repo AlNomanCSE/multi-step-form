@@ -15,7 +15,7 @@ function Context({ title, type, name, id, placeholder }: contextProp) {
     </div>
   );
 }
-const PersonalInfo = () => {
+const PersonalInfo = ({ stepIncrease }: { stepIncrease: () => void }) => {
   const types = [
     {
       title: "Name",
@@ -58,6 +58,9 @@ const PersonalInfo = () => {
           />
         ))}
       </div>
+      <section className={styles.buttons}>
+        <button onClick={stepIncrease}>Next Step</button>
+      </section>
     </section>
   );
 };

@@ -1,7 +1,18 @@
 import React from "react";
 import styles from "./FinishingUp.module.css";
 
-const FinishingUp = () => {
+type CardType = {
+  title: string;
+  pricing: number;
+  time: string;
+};
+type IProps = {
+  card: CardType;
+  addOnes: CardType[];
+  stepIncrease: () => void;
+  stepDecrease: () => void;
+};
+const FinishingUp = ({ card, addOnes, stepIncrease, stepDecrease }: IProps) => {
   return (
     <section className={styles.main}>
       <div className={styles.headings}>
@@ -12,31 +23,56 @@ const FinishingUp = () => {
         <div className={styles.section1}>
           <div>
             <div>
-              <h1>Arcade(Yearly)</h1>
-              <span>change</span>
+              <h1>
+                {card.title}({card.time == "yr" ? "Yearly" : "Monthly"})
+              </h1>
+              {/* <span>change</span> */}
             </div>
-            <div>$90/yr</div>
+            <div>
+              ${card.pricing}/{card.time == "yr" ? "yr" : "mo"}
+            </div>
           </div>
           <hr />
           <div>
-            <div>
-              <p>Online service</p>
-              <span>+10/yr</span>
-            </div>
-            <div>
-              <p>Larger storage</p>
-              <span>+20/yr</span>
-            </div>
+            {addOnes.map((addone, index) => (
+              <AddOnesSection
+                title={addone.title}
+                pricing={addone.pricing}
+                time={addone.time}
+                key={index}
+              />
+            ))}
           </div>
         </div>
 
         <div className={styles.section2}>
           <p>Total(per year)</p>
-          <span>+120/yr</span>
+          <span>
+            +
+            {card.pricing +
+              addOnes.reduce(
+                (accumulator, current) => accumulator + current["pricing"],
+                0
+              )}
+            /{card.time == "yr" ? "yr" : "mo"}
+          </span>
         </div>
       </div>
+      <section className={styles.buttons}>
+        <button onClick={stepDecrease}>Go Back</button>
+        <button onClick={stepIncrease}>Confirm</button>
+      </section>
     </section>
   );
 };
-
+function AddOnesSection({ title, pricing, time }: CardType) {
+  return (
+    <div>
+      <p>{title}</p>
+      <span>
+        +{pricing}/{time}
+      </span>
+    </div>
+  );
+}
 export default FinishingUp;

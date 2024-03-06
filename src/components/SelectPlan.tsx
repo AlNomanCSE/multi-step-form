@@ -86,9 +86,11 @@ type Props = {
     pricing: number;
     time: string;
   }) => void;
+  stepIncrease: () => void;
+  stepDecrease: () => void;
 };
 
-const SelectPlan = ({ updateCard }: Props) => {
+const SelectPlan = ({ updateCard, stepIncrease, stepDecrease }: Props) => {
   const [LocalCardDetails, setLocalCardDetails] = useState<
     {
       src: string;
@@ -139,6 +141,10 @@ const SelectPlan = ({ updateCard }: Props) => {
           </span>
         </div>
       </div>
+      <section className={styles.buttons}>
+        <button onClick={stepDecrease}>Go Back</button>
+        <button onClick={stepIncrease}>Next Step</button>
+      </section>
     </section>
   );
 };

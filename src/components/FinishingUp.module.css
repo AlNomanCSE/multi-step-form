@@ -65,3 +65,19 @@
   color: var(--Purplishblue);
   font-weight: 600;
 }
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.buttons button:last-child {
+  background-color: var(--Purplishblue);
+  color: var(--White);
+}
