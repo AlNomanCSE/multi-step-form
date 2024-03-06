@@ -32,6 +32,9 @@
   justify-content: space-between;
   padding: 0 2.5rem;
 }
+.addOneCard input[type="checkbox"]:checked {
+  accent-color: var(--Purplishblue);
+}
 .addOneCard h1 {
   font-size: 1rem;
   color: var(--Marine-blue);

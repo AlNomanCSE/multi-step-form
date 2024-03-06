@@ -1,4 +1,3 @@
-import { title } from "process";
 import styles from "./PersonalInfo.module.css";
 
 type contextProp = {

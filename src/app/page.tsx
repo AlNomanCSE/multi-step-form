@@ -7,8 +7,21 @@ import AddOnes from "@/components/AddOnes";
 import FinishingUp from "@/components/FinishingUp";
 import { useState } from "react";
 
+type CardType = {
+  title: string;
+  pricing: number;
+  time: string;
+};
 export default function Home() {
   const [step, setStep] = useState<number>(1);
+  const [card, setCard] = useState<CardType>({
+    title: "Arcade",
+    pricing: 9,
+    time: "mo",
+  });
+  function updateCard({ title, pricing, time }: CardType) {
+    setCard({ title, pricing, time });
+  }
 
   function stepIncrease() {
     if (step < 4) {
@@ -24,6 +37,7 @@ export default function Home() {
       return;
     }
   }
+
   return (
     <main className={styles.main}>
       <section className={styles.section1}>
@@ -31,8 +45,8 @@ export default function Home() {
       </section>
       <section className={styles.section2}>
         {step == 1 && <PersonalInfo />}
-        {step == 2 && <SelectPlan />}
-        {step == 3 && <AddOnes />}
+        {step == 2 && <SelectPlan updateCard={updateCard} />}
+        {step == 3 && <AddOnes planDetails={card} />}
         {step == 4 && <FinishingUp />}
         <section className={styles.buttons}>
           <button onClick={stepDecrease}>Go Back</button>

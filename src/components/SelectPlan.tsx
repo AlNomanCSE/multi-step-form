@@ -7,10 +7,22 @@ type CardType = {
   title: string;
   pricing: number;
   time: string;
+  updateCard: ({
+    title,
+    pricing,
+    time,
+  }: {
+    title: string;
+    pricing: number;
+    time: string;
+  }) => void;
 };
-function Card({ src, title, pricing, time }: CardType) {
+function Card({ src, title, pricing, time, updateCard }: CardType) {
+  const handleClick = () => {
+    updateCard({ title, pricing, time });
+  };
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleClick}>
       <div>
         <Image src={src} alt="logo" width={40} height={40} />
       </div>
@@ -64,17 +76,34 @@ const cardDetailsYearly = [
     time: "yr",
   },
 ];
+type Props = {
+  updateCard: ({
+    title,
+    pricing,
+    time,
+  }: {
+    title: string;
+    pricing: number;
+    time: string;
+  }) => void;
+};
 
-const SelectPlan = () => {
-  const [cardDetails, setCardDetails] =
-    useState<CardType[]>(cardDetailsMonthly);
+const SelectPlan = ({ updateCard }: Props) => {
+  const [LocalCardDetails, setLocalCardDetails] = useState<
+    {
+      src: string;
+      title: string;
+      pricing: number;
+      time: string;
+    }[]
+  >(cardDetailsMonthly);
 
   function handleMonthOrYear(event: React.ChangeEvent<HTMLInputElement>) {
     const isChecked = event.target.checked;
     if (isChecked) {
-      setCardDetails(cardDetailsYearly);
+      setLocalCardDetails(cardDetailsYearly);
     } else {
-      setCardDetails(cardDetailsMonthly);
+      setLocalCardDetails(cardDetailsMonthly);
     }
   }
 
@@ -86,33 +115,26 @@ const SelectPlan = () => {
       </div>
       <div>
         <div className={styles.cards}>
-          {cardDetails.map((object, index) => (
+          {LocalCardDetails.map((object, index) => (
             <Card
               src={object.src}
               title={object.title}
               pricing={object.pricing}
               key={index}
               time={object.time}
+              updateCard={updateCard}
             />
           ))}
         </div>
         <div className={styles.billingTime}>
-          <span
-            className={
-              cardDetails == cardDetailsMonthly ? `${styles.active}` : ``
-            }
-          >
+          <span className={cardDetailsMonthly ? `${styles.active}` : ``}>
             Monthly
           </span>
           <label className={styles.switch}>
             <input type="checkbox" onChange={handleMonthOrYear} />
             <span className={styles.slider}></span>
           </label>
-          <span
-            className={
-              cardDetails == cardDetailsYearly ? `${styles.active}` : ``
-            }
-          >
+          <span className={cardDetailsYearly ? `${styles.active}` : ``}>
             Yearly
           </span>
         </div>
