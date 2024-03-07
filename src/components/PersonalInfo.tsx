@@ -11,6 +11,8 @@ type contextProp = {
   setFromData: Dispatch<
     SetStateAction<{ name: string; email: string; phone: string }>
   >;
+  setTouched: Dispatch<SetStateAction<boolean>>;
+  touched: boolean;
 };
 function Context({
   title,
@@ -20,20 +22,48 @@ function Context({
   placeholder,
   fromData,
   setFromData,
+  setTouched,
+  touched,
 }: contextProp) {
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
     setFromData((previousData) => ({ ...previousData, [name]: value }));
   }
+  const errorMessages: { name: string; email: string; phone: string } = {
+    name: "Enter your Name",
+    email: "Enter your Email",
+    phone: "Enter your Phone Number",
+  };
+  function handleFocuse() {
+    setTouched(true);
+    if (fromData[name as keyof typeof fromData].trim() !== "") {
+      setTouched(false);
+    }
+  }
+
   return (
     <div className={styles.input}>
-      <label htmlFor="name">{title}</label>
+      <label>
+        {title}
+        <p
+          className={
+            touched && fromData[name as keyof typeof fromData].trim() === ""
+              ? styles.inputError
+              : ""
+          }
+        >
+          {touched &&
+            fromData[name as keyof typeof fromData].trim() == "" &&
+            errorMessages[name as keyof typeof errorMessages]}
+        </p>
+      </label>
       <input
         type={type}
         name={name}
         id={id}
         placeholder={placeholder}
         onChange={handleInputChange}
+        onFocus={handleFocuse}
         value={
           name === "name"
             ? fromData["name"]
@@ -54,6 +84,14 @@ type IProps = {
   >;
 };
 const PersonalInfo = ({ stepIncrease, fromData, setFromData }: IProps) => {
+  const [touched, setTouched] = useState<boolean>(false);
+  function handelIncrease() {
+    fromData["name"].trim() != "" &&
+      fromData["email"].trim() != "" &&
+      fromData["phone"].trim() != "" &&
+      stepIncrease();
+  }
+
   return (
     <section className={styles.main}>
       <div className={styles.headings}>
@@ -69,6 +107,8 @@ const PersonalInfo = ({ stepIncrease, fromData, setFromData }: IProps) => {
           placeholder="e.g. Stephen King"
           setFromData={setFromData}
           fromData={fromData}
+          setTouched={setTouched}
+          touched={touched}
         />
         <Context
           title="Email"
@@ -78,6 +118,8 @@ const PersonalInfo = ({ stepIncrease, fromData, setFromData }: IProps) => {
           placeholder="e.g. stephenking@lorem.com"
           setFromData={setFromData}
           fromData={fromData}
+          setTouched={setTouched}
+          touched={touched}
         />
         <Context
           title="Phone Number"
@@ -87,10 +129,12 @@ const PersonalInfo = ({ stepIncrease, fromData, setFromData }: IProps) => {
           placeholder="e.g. +1 234 567 890"
           setFromData={setFromData}
           fromData={fromData}
+          setTouched={setTouched}
+          touched={touched}
         />
       </div>
       <section className={styles.buttons}>
-        <button onClick={stepIncrease}>Next Step</button>
+        <button onClick={handelIncrease}>Next Step</button>
       </section>
     </section>
   );

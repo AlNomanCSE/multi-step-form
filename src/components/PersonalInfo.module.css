@@ -28,6 +28,7 @@
 }
 .input label {
   color: var(--Marine-blue);
+  position: relative;
 }
 .input input {
   padding: 0.5rem 1rem;
@@ -56,4 +57,13 @@
   cursor: pointer;
   background-color: var(--Marine-blue);
   color: var(--White);
+}
+
+/* Error */
+
+.inputError {
+  color: red;
+  position: absolute;
+  inset: 0;
+  transform: translate(130px, 5px);
 }
