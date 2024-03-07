@@ -1,69 +1,145 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.headings {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.headings h1 {
-  font-size: 1.5rem;
-  color: var(--Marine-blue);
-}
-.headings p {
-  color: var(--Coolgray);
-}
-.addOneCards {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+@media screen and (width>=992px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .headings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .headings h1 {
+    font-size: 1.5rem;
+    color: var(--Marine-blue);
+  }
+  .headings p {
+    color: var(--Coolgray);
+  }
+  .addOneCards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .addOneCard {
+    height: 25%;
+    border: 1px solid var(--Purplishblue);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+  }
+  .addOneCard input[type="checkbox"]:checked {
+    accent-color: var(--Purplishblue);
+  }
+  .addOneCard h1 {
+    font-size: 1rem;
+    color: var(--Marine-blue);
+  }
+  .addOneCard p {
+    color: var(--Coolgray);
+    font-size: 13px;
+  }
+  .addOneCard h5 {
+    color: var(--Purplishblue);
+    font-weight: 500;
+  }
+  .addOneCard div:nth-child(2) {
+    width: 200px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttons button {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .buttons button:last-child {
+    background-color: var(--Marine-blue);
+    color: var(--White);
+  }
 }
 
-.addOneCard {
-  height: 25%;
-  border: 1px solid var(--Purplishblue);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2.5rem;
-}
-.addOneCard input[type="checkbox"]:checked {
-  accent-color: var(--Purplishblue);
-}
-.addOneCard h1 {
-  font-size: 1rem;
-  color: var(--Marine-blue);
-}
-.addOneCard p {
-  color: var(--Coolgray);
-  font-size: 13px;
-}
-.addOneCard h5 {
-  color: var(--Purplishblue);
-  font-weight: 500;
-}
-.addOneCard div:nth-child(2) {
-  width: 200px;
-}
+@media screen and (width<=600px) {
+  .main {
+    background-color: var(--White);
+    height: 60%;
+    position: absolute;
+    inset: 0;
+    top: -20%;
+    border-radius: 10px;
+    width: 80vw;
+    margin: 0rem auto;
+    padding: 2rem;
+  }
+  .headings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .headings h1 {
+    font-size: 1.5rem;
+    color: var(--Marine-blue);
+  }
+  .headings p {
+    color: var(--Coolgray);
+  }
+  .addOneCards {
+    padding: 1rem 0;
+    height: 40vh;
+  }
+  .addOneCard {
+    height: 25%;
+    border: 1px solid var(--Purplishblue);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    margin: 1rem 0;
+  }
+  .addOneCard input[type="checkbox"]:checked {
+    accent-color: var(--Purplishblue);
+  }
+  .addOneCard h1 {
+    font-size: 1rem;
+    color: var(--Marine-blue);
+  }
+  .addOneCard p {
+    color: var(--Coolgray);
+    font-size: 13px;
+  }
+  .addOneCard h5 {
+    color: var(--Purplishblue);
+    font-weight: 500;
+  }
+  .addOneCard div:nth-child(2) {
+    width: 200px;
+  }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
 
-.buttons button {
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.buttons button:last-child {
-  background-color: var(--Marine-blue);
-  color: var(--White);
+  .buttons button {
+    padding: 0.3rem 1rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--Marine-blue);
+    color: var(--White);
+  }
 }
