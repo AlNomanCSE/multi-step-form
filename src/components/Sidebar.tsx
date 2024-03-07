@@ -40,7 +40,14 @@ const Sidebar = ({ activeStep }: Props) => {
         alt="sidebar image"
         width={500}
         height={500}
-        className={styles.image}
+        className={styles.imagepc}
+      />
+      <Image
+        src="images/bg-sidebar-mobile.svg"
+        alt="sidebar image"
+        width={200}
+        height={200}
+        className={styles.imagembl}
       />
       <section className={styles.div}>
         {ProgressArry.map((object, index) => (
