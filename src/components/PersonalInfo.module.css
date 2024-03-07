@@ -62,18 +62,36 @@
     inset: 0;
     top: -20%;
     border-radius: 10px;
-    width: 300px;
+    width: 80vw;
     margin: 0rem auto;
-    padding: 1rem;
+    padding: 2rem;
   }
   .buttons {
-    margin-top: 7rem;
+    margin-top: 4rem;
     display: flex;
     justify-content: flex-end;
   }
   .headings p {
     color: var(--Coolgray);
     margin: 1rem 0;
+  }
+  .buttons button {
+    padding: 0.3rem 1rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--Marine-blue);
+    color: var(--White);
+  }
+  .input input {
+    padding: 1rem 1rem;
+    border: 0.5px solid var(--Coolgray);
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 14px;
+    outline: none;
+    color: var(--Marine-blue);
   }
 }
 

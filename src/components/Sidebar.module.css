@@ -83,18 +83,15 @@
     object-fit: cover;
     object-position: center;
   }
-  .main {
-    position: relative;
-  }
+
   .div {
-    width: 100%;
+    width: 100vh;
     position: absolute;
     inset: 0;
-    top: 42%;
-    left: 77%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: row;
+    top: 7vw;
+    left: 35vw;
     gap: 1rem;
     color: var(--White);
   }

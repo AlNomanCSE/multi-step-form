@@ -29,9 +29,11 @@
     height: 100svh;
     background-color: var(--Lightgray);
     margin: 0rem auto;
+    position: relative;
   }
   .section1 {
     height: 35%;
+    position: relative;
   }
   .section2 {
     height: 100%;
