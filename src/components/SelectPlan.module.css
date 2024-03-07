@@ -1,112 +1,229 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.headings {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.headings h1 {
-  font-size: 1.5rem;
-  color: var(--Marine-blue);
-}
-.headings p {
-  color: var(--Coolgray);
-}
-.cards {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.billingTime {
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--Coolgray);
-  font-weight: 600;
-}
-.card {
-  width: 30%;
-  height: 140px;
-  border: 1px solid var(--Coolgray);
-  border-radius: 7px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 1rem;
-  gap: 2rem;
-}
-.card .text {
-  display: flex;
-  flex-direction: column;
-  gap: 0rem;
-}
-.text h1 {
-  font-size: 1rem;
-  color: var(--Marine-blue);
-}
-.text span {
-  color: var(--Coolgray);
-  font-size: 12px;
-}
-.active {
-  color: var(--Marine-blue);
-}
-.card:hover {
-  border: 1px solid var(--Purplishblue);
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  margin: 0 10px;
-  transition: 0.4s;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  background-color: var(--Marine-blue);
-  border-radius: 30px;
-}
-.slider::before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  border-radius: 50%;
-  left: 4px;
-  bottom: 4px;
-  background-color: aliceblue;
-  transition: all 0.3s;
-}
-.switch input {
-  display: none;
-}
-.switch input:checked + .slider::before {
-  transform: translateX(19px);
-}
+@media screen and (width>=992px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .headings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .headings h1 {
+    font-size: 1.5rem;
+    color: var(--Marine-blue);
+  }
+  .headings p {
+    color: var(--Coolgray);
+  }
+  .cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .billingTime {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--Coolgray);
+    font-weight: 600;
+  }
+  .card {
+    width: 30%;
+    height: 140px;
+    border: 1px solid var(--Coolgray);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    gap: 2rem;
+  }
+  .card .text {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .text h1 {
+    font-size: 1rem;
+    color: var(--Marine-blue);
+  }
+  .text span {
+    color: var(--Coolgray);
+    font-size: 12px;
+  }
+  .active {
+    color: var(--Marine-blue);
+  }
+  .card:hover {
+    border: 1px solid var(--Purplishblue);
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin: 0 10px;
+    transition: 0.4s;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--Marine-blue);
+    border-radius: 30px;
+  }
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: aliceblue;
+    transition: all 0.3s;
+  }
+  .switch input {
+    display: none;
+  }
+  .switch input:checked + .slider::before {
+    transform: translateX(19px);
+  }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.buttons button {
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  .buttons button {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .buttons button:last-child {
+    background-color: var(--Marine-blue);
+    color: var(--White);
+  }
 }
-.buttons button:last-child {
-  background-color: var(--Marine-blue);
-  color: var(--White);
+@media screen and (width <=600px) {
+  .main {
+    background-color: var(--White);
+    height: 60%;
+    position: absolute;
+    inset: 0;
+    top: -20%;
+    border-radius: 10px;
+    width: 80vw;
+    margin: 0rem auto;
+    padding: 2rem;
+  }
+  .cards {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card {
+    width: 100%;
+    height: 70px;
+    border: 1px solid var(--Coolgray);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    background-color: aqua;
+    margin: 1.5rem 0;
+    gap: 1rem;
+  }
+  .card .text {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .text h1 {
+    font-size: 1.2rem;
+    color: var(--Marine-blue);
+  }
+  .text span {
+    color: var(--Coolgray);
+    font-size: 14px;
+  }
+  .billingTime {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--Coolgray);
+    font-weight: 600;
+    background-color: var(--Lightgray);
+    border-radius: 5px;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin: 0 10px;
+    transition: 0.4s;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--Marine-blue);
+    border-radius: 30px;
+  }
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: aliceblue;
+    transition: all 0.3s;
+  }
+  .switch input {
+    display: none;
+  }
+  .switch input:checked + .slider::before {
+    transform: translateX(19px);
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  .headings p {
+    color: var(--Coolgray);
+    margin: 1rem 0;
+  }
+  .buttons button {
+    padding: 0.3rem 1rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--Marine-blue);
+    color: var(--White);
+  }
+  .input input {
+    padding: 1rem 1rem;
+    border: 0.5px solid var(--Coolgray);
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 14px;
+    outline: none;
+    color: var(--Marine-blue);
+  }
 }
