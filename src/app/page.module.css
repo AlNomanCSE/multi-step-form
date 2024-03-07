@@ -2,10 +2,10 @@
   .main {
     width: 800px;
     height: 470px;
-    background-color: var(--Lightgray);
     border-radius: 10px;
     margin: 5rem auto;
     display: flex;
+    background-color: var(--White);
   }
   .section1 {
     width: 30%;

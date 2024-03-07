@@ -96,6 +96,13 @@
     outline: none;
     color: var(--Marine-blue);
   }
+  .inputError {
+    color: red;
+    position: absolute;
+    inset: 0;
+    font-size: 13px;
+    transform: translate(0px, 80px);
+  }
 }
 
 @media screen and (width >=992px) {
@@ -104,14 +111,11 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-}
-
-/* Error */
-
-.inputError {
-  color: red;
-  position: absolute;
-  inset: 0;
-  font-size: 13px;
-  transform: translate(0px, 80px);
+  .inputError {
+    color: red;
+    position: absolute;
+    inset: 0;
+    font-size: 12px;
+    transform: translate(180px, 10px);
+  }
 }
