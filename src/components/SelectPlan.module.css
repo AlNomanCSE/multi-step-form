@@ -115,7 +115,7 @@
 @media screen and (width <=600px) {
   .main {
     background-color: var(--White);
-    height: 60%;
+    height: 70%;
     position: absolute;
     inset: 0;
     top: -20%;
