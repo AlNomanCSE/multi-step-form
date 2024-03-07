@@ -73,7 +73,7 @@
 @media screen and (width<=600px) {
   .main {
     background-color: var(--White);
-    height: 70%;
+    height: 65%;
     position: absolute;
     inset: 0;
     top: -20%;
