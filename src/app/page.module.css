@@ -29,15 +29,19 @@
     height: 100vh;
     background-color: var(--White);
     margin: 0rem auto;
+    position: relative;
   }
   .section1 {
-    height: 30vh;
+    height: 35vh;
   }
   .section2 {
+    position: absolute;
+    inset: 0;
     padding: 1rem;
-    height: 60vh;
+    height: 65vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    background-color: aqua;
   }
 }
