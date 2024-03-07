@@ -107,6 +107,7 @@
     justify-content: space-between;
     padding: 1rem 2.5rem;
     margin: 1rem 0;
+    gap: 1rem;
   }
   .addOneCard input[type="checkbox"]:checked {
     accent-color: var(--Purplishblue);
