@@ -25,7 +25,7 @@
 
 @media screen and (width<=600px) {
   .main {
-    width: 365px;
+    width: 100vw;
     height: 150vh;
     background-color: var(--Lightgray);
     margin: 0rem auto;
@@ -35,7 +35,6 @@
   }
   .section2 {
     height: 65%;
-
     position: relative;
   }
 }

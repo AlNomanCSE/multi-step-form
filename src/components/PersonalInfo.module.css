@@ -68,9 +68,13 @@
     padding: 1rem;
   }
   .buttons {
-    margin-top: 2rem;
+    margin-top: 7rem;
     display: flex;
     justify-content: flex-end;
+  }
+  .headings p {
+    color: var(--Coolgray);
+    margin: 1rem 0;
   }
 }
 
