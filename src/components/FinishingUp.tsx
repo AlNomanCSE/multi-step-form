@@ -26,7 +26,6 @@ const FinishingUp = ({ card, addOnes, stepIncrease, stepDecrease }: IProps) => {
               <h1>
                 {card.title}({card.time == "yr" ? "Yearly" : "Monthly"})
               </h1>
-              {/* <span>change</span> */}
             </div>
             <div>
               ${card.pricing}/{card.time == "yr" ? "yr" : "mo"}
