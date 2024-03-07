@@ -57,7 +57,7 @@
 @media screen and (width <=600px) {
   .main {
     background-color: var(--White);
-    height: 60%;
+    height: 70%;
     position: absolute;
     inset: 0;
     top: -20%;
@@ -84,6 +84,9 @@
     background-color: var(--Marine-blue);
     color: var(--White);
   }
+  .input {
+    margin: 1rem 0 0 0;
+  }
   .input input {
     padding: 1rem 1rem;
     border: 0.5px solid var(--Coolgray);
@@ -109,5 +112,6 @@
   color: red;
   position: absolute;
   inset: 0;
-  transform: translate(130px, 5px);
+  font-size: 13px;
+  transform: translate(0px, 80px);
 }
